@@ -1,0 +1,71 @@
+@use "_base.scss" as *;
+body {
+  height: 100vh;
+  /* Created with https://www.css-gradient.com */
+  background: #e37f4e;
+  background: -webkit-linear-gradient(top left, #e37f4e, #1e58b9);
+  background: -moz-linear-gradient(top left, #e37f4e, #1e58b9);
+  background: linear-gradient(to bottom right, #e37f4e, #1e58b9);
+}
+p {
+  text-align: center;
+  font-family: $font-body;
+  font-size: 25px;
+
+  margin: 4erm;
+
+  padding: 0;
+}
+h2 {
+  text-align: center;
+  font-size: 50px;
+  color: $color-font;
+}
+.game {
+  margin: 20px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+body {
+  .game {
+    #inputGuess {
+      background-color: $color-secondary-light;
+      block-size: 4em;
+      font-weight: bold;
+      font-size: 2em;
+      text-align: center;
+      margin: 15px;
+    }
+    #outputResult {
+      color: $color-font;
+      padding: 10px 20px;
+      margin: 15px;
+      font-size: 2em;
+    }
+    #countedOutput {
+      border-radius: 10px;
+      color: $color-secondary;
+      color: $color-font-secondary;
+      font-size: 2em;
+      padding: 10px 20px;
+      margin: 60px;
+    }
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

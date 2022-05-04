@@ -1,0 +1,168 @@
+@use "_base.scss" as *;
+body {
+  .game {
+    #button_new_Game {
+      background-color: $color-secondary-light;
+      block-size: 4em;
+      text-align: center;
+      font-size: 10px;
+      font-weight: bold;
+      margin: 6%;
+      padding: 10px 20px;
+      border-width: 100px;
+      border: none;
+      outline: none;
+      color: $color-font;
+
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 25px;
+    }
+    #button_new_Game::before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff9900b9,
+        #598fbb,
+        #a6540d,
+        #ffa600,
+        #ff7300,
+        #002bff,
+        #7a00ff,
+        #006eff,
+        #ffcc00
+      );
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+    #button_new_Game:active {
+      color: $color-black;
+    }
+    #button_new_Game:active::after {
+      color: transparent;
+    }
+    #button_new_Game:hover:before {
+      opacity: 1;
+    }
+    #button_new_Game:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $color-secondary-light;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+  }
+}
+
+@mixin buttonLayer {
+  content: "";
+  position: absolute;
+  top: -$borderWidth;
+  left: -$borderWidth;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: $borderWidth solid transparent;
+  opacity: 0;
+  pointer-events: none;
+  border-image-slice: 1;
+}
+body {
+  .game {
+    #button {
+      border-radius: 10px;
+
+      padding: 10px 5px;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: calc(50% - 2.5rem - 5px);
+      left: calc(50% - 10rem - 5px);
+      height: 4rem;
+      width: 14rem;
+      margin: 4rem;
+      background: transparent
+        linear-gradient(
+          to top left,
+          rgba(249, 208, 129, 0.2) 0%,
+          rgba(227, 2, 62, 0.2) 40%,
+          rgba(49, 128, 135, 0.2) 100%
+        );
+      border: $borderWidth solid transparent;
+      border-image-source: linear-gradient(
+        to top left,
+        rgba(249, 208, 129, 1) 0%,
+        rgba(227, 2, 62, 1) 40%,
+        rgba(49, 128, 135, 1) 100%
+      );
+      border-image-slice: 1;
+      transition: transform 0.25s;
+      // letter-spacing: .2rem;
+      font-family: $font-body;
+      font-size: 2rem;
+      font-weight: 300 bold;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #333;
+
+      &::after {
+        @include buttonLayer;
+        z-index: -1;
+        background: transparent
+          linear-gradient(
+            to bottom left,
+            rgba(249, 208, 129, 0.25) 10%,
+            rgba(227, 2, 62, 0.25) 30%,
+            rgba(49, 128, 135, 0.25) 90%
+          );
+        border-image-source: linear-gradient(
+          to bottom left,
+          rgba(249, 208, 129, 1) 10%,
+          rgba(227, 2, 62, 1) 30%,
+          rgba(49, 128, 135, 1) 90%
+        );
+        transition: opacity 1s;
+      }
+
+      &:active {
+        transform: scale(0.96);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &::before {
+        @include buttonLayer;
+        z-index: 0;
+        border-image-source: linear-gradient(
+          to bottom left,
+          rgba(249, 208, 129, 1) 20%,
+          rgba(227, 2, 62, 1) 40%,
+          rgba(49, 128, 135, 1) 70%
+        );
+        transition: opacity 0.5s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+}
