@@ -10,9 +10,9 @@ body {
 p {
   text-align: center;
   font-family: $font-body;
-  font-size: 25px;
+  font-size: 30px;
 
-  margin: 4erm;
+  margin: 6px;
 
   padding: 0;
 }
@@ -43,8 +43,8 @@ body {
     }
     #outputResult {
       color: $color-font;
-      padding: 10px 20px;
-      margin: 15px;
+      padding: 40px 20px;
+      margin: 20px;
       font-size: 2em;
     }
     #countedOutput {

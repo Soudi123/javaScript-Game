@@ -56,23 +56,23 @@ body .game #button_new_Game:after {
 
 body .game #button {
   border-radius: 10px;
-  padding: 10px 5px;
+  padding: 9px 5px;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   display: block;
   top: calc(50% - 2.5rem - 5px);
   left: calc(50% - 10rem - 5px);
   height: 4rem;
-  width: 14rem;
-  margin: 4rem;
+  width: 10rem;
+  margin: 5rem;
   background: transparent linear-gradient(to top left, rgba(249, 208, 129, 0.2) 0%, rgba(227, 2, 62, 0.2) 40%, rgba(49, 128, 135, 0.2) 100%);
   border: 5px solid transparent;
   border-image-source: linear-gradient(to top left, rgb(249, 208, 129) 0%, rgb(227, 2, 62) 40%, rgb(49, 128, 135) 100%);
   border-image-slice: 1;
   transition: transform 0.25s;
   font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  font-weight: 300 bold;
+  font-size: 25px;
+  font-weight: 400 bold;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -131,8 +131,8 @@ body {
 p {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 25px;
-  margin: 4erm;
+  font-size: 30px;
+  margin: 6px;
   padding: 0;
 }
 
@@ -161,8 +161,8 @@ body .game #inputGuess {
 }
 body .game #outputResult {
   color: #0a053d;
-  padding: 10px 20px;
-  margin: 15px;
+  padding: 40px 20px;
+  margin: 20px;
   font-size: 2em;
 }
 body .game #countedOutput {
